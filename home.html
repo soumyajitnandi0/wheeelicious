@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheeelicious</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="locate.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="home.html"><div class="logo">Wheeelicious</div></a>
+        <input type="text" class="search-bar" placeholder="Search">
+        
+        <!-- Hamburger Menu Icon -->
+        <button class="open-btn" onclick="openNav()"> ☰ </button>
+
+        <!-- The Sidenav -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+            <a href="home.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="locate.html">Locate Us</a>
+            <a href="#">Legal Details</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+        <h1>Street Food Meets Gourmet</h1>
+        <p>Eat Well, Live Well</p>
+        <a href="#scroll"><button id="explore-btn">Explore More</button></a>
+    </div>
+
+    <!-- Login and Sign Up Buttons -->
+    <div class="auth-buttons">
+        <a href="profile.html"><button class="login-btn">Log In</button></a>
+        <a href="#"><button class="signup-btn">Sign Up</button></a>
+    </div>
+    </section>
+
+
+<br><br><br>
+
+
+    <!-- Image Slider -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide fade">
+                <img src="https://i0.wp.com/goniyo.com/wp-content/uploads/2021/06/zomato_banner_new-users.png?fit=1366%2C690&ssl=1" alt="Slide 1">
+            </div>
+            <div class="slide fade">
+                <img src="https://marketingmind.in/wp-content/uploads/2019/10/Zomato.jpg" alt="Slide 2">
+            </div>
+            <div class="slide fade">
+                <img src="https://i0.wp.com/goniyo.com/wp-content/uploads/2021/06/zomato_banner_new-users.png?fit=1366%2C690&ssl=1" alt="Slide 3">
+            </div>
+        </div>
+
+        <!-- Next and Previous Buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Dots/Indicators -->
+    <div class="dots" id="scroll">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+    <!-- About Us & What We Do -->
+    <section class="about-us">
+        <h2>About Wheeelicious</h2>
+        <p>Wheeelicious is a vibrant street food platform dedicated to transforming the street food experience by prioritizing hygiene, transparency, and sustainability. Our mission is to bring delicious, high-quality street food to food lovers while ensuring that every meal is prepared with the utmost care and quality standards. We partner with local vendors, providing them with the support they need to thrive in a competitive market. Through our innovative app, we streamline the licensing process for street vendors and enhance their visibility to customers. At Wheeelicious, we believe that everyone deserves access to safe and delightful street food experiences, and we are committed to making that a reality for communities everywhere. Join us on this flavorful journey!</p>
+    </section>
+    
+
+    <!-- Our mission -->
+    <section class="what-we-do">
+        <h2>Our Mission</h2>
+        <div class="mission-card">
+            <div class="button-container">
+                <button class="mission-btn" id="btn1" onclick="showContent(1)">Hygiene</button>
+                <button class="mission-btn" id="btn2" onclick="showContent(2)">Transparency</button>
+                <button class="mission-btn" id="btn3" onclick="showContent(3)">Awareness</button>
+            </div>
+            <div class="content">
+                <p id="default-text" style="display: contents;">At Wheeelicious, we are dedicated to promoting "HYGIENE", "TRANSPARENCY" & "AWARENESS" in the street food industry, ensuring customers enjoy safe, delicious food with full confidence in what they consume.</p>
+                <p id="content-1" style="display: none;">Wheeelicious prioritizes "HYGIENE" as a core value in its operations. The company ensures that all street food vendors adhere to strict health and safety guidelines, conducting regular training sessions on food handling and sanitation practices. By providing vendors with the necessary tools and resources to maintain cleanliness, Wheeelicious fosters a culture of hygiene that benefits both the vendors and the customers. This commitment not only enhances food quality but also builds consumer trust in street food.</p>
+                <p id="content-2" style="display: none;">Wheeelicious believes in "TRANSPARENCY" as a fundamental aspect of its business model. The platform offers detailed information about each vendor, including their sourcing practices, food preparation methods, and compliance with hygiene standards. Customers can access real-time data about the vendors, fostering an environment where they can make informed choices about the food they consume. This transparency cultivates trust and loyalty, encouraging more people to enjoy street food without concerns over safety or quality.</p>
+                <p id="content-3" style="display: none;">To promote "AWARENESS" about the importance of hygiene and food quality, Wheeelicious actively engages in community outreach and educational initiatives. The company organizes workshops and events to inform both vendors and consumers about best practices in food safety and the benefits of choosing hygienic food options. By leveraging social media and local partnerships, Wheeelicious raises awareness of street food culture while emphasizing the significance of hygiene, transparency, and sustainability in everyday eating habits. This holistic approach contributes to a more informed and health-conscious community.</p>
+            </div>
+        </div>
+             
+    </section>
+
+    <!-- Locate Section -->
+    <section id="locate-section" class="locate-section">
+        <h2><a href="locate.html">Locate Our Stalls</a></h2><br>
+        <div id="map"></div>
+    </section>
+    <br><br><br>
+
+
+    <!-- footer section -->
+    <footer class="footer">
+        <div class="container">
+            <!-- About Section -->
+            <div class="footer-about">
+                <h4>About Us</h4>
+                <p>We are a street food platform aiming to bring hygiene, transparency, and awareness to street food culture.</p>
+            </div>
+    
+            <!-- Contact Details Section -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><strong>Address:</strong> EC Phase-I, Bengaluru, INDIA</li>
+                    <li><strong>Email:</strong> <a href="mailto:info@example.com">info@example.com</a></li>
+                    <li><strong>Phone:</strong> +123-456-7890</li>
+                </ul>
+            </div>
+    
+            <!-- Social Media Section -->
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <a href="https://facebook.com" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/018/930/476/non_2x/facebook-logo-facebook-icon-transparent-free-png.png" alt="facebook icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/042/148/611/non_2x/new-twitter-x-logo-twitter-icon-x-social-media-icon-free-png.png" alt="x icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/018/930/415/non_2x/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank"><img src="https://static.vecteezy.com/system/resources/thumbnails/023/986/480/small_2x/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.png" alt="youtube icon"><i class="fab fa-youtube-in"></i></a>
+                <a href="https://linkedin.com" target="_blank"><img src="https://static.vecteezy.com/system/resources/previews/023/986/970/non_2x/linkedin-logo-linkedin-logo-transparent-linkedin-icon-transparent-free-free-png.png" alt="linkedin icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    
+        <!-- Copyright Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 Wheeelicious. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script src="locate.js"></script>
+</body>
+</html>
